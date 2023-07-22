@@ -2,8 +2,8 @@
 <html lang="en">
     <head>
         <script src="https://unpkg.com/htmx.org@1.9.2" integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h" crossorigin="anonymous"></script>
+        <script src="/index.js"></script>
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-        <link rel="stylesheet" href="/styles.css">
         <link rel="stylesheet" href="/index-styles.css">
     </head>
     <body>
@@ -20,7 +20,7 @@
                     ligula ornare nulla.
                 </p>
                 <span class="seperator" ></span>
-                <a href="/chat">go to chat</a>
+                <button style="margin-top: 1.25rem" id="chat-link" onclick="window.location.href='/chat';">go to chat</button>
             </div>
             <div id="links">
             </div>

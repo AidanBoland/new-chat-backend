@@ -15,7 +15,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, button {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,7 +24,7 @@ time, mark, audio, video {
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+footer, header, hgroup, menu, nav, section, button {
 	display: block;
 }
 body {
@@ -45,19 +45,26 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+button {
+    border: none;
+    color: inherit;
+}
 
 /* Variables and mixins declared here will be available in all other SCSS files */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,700;0,900;1,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,800;1,400;1,600&family=Poppins:ital,wght@0,100;0,400;0,700;0,900;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,700;0,900;1,400;1,700');
 
 $text: #dddddd;
 $box: rgba(129, 129, 129, 0.30);
 $box-dark: rgba(68, 68, 68, 0.60);
 
+// html {
+//     background: linear-gradient(218deg, #AF7139 10.42%, #8F39E6 100%);
+// }
+
 :root {
     color: $text;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(218deg, #AF7139 10.42%, #8F39E6 100%);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -88,7 +95,30 @@ $box-dark: rgba(68, 68, 68, 0.60);
     padding: 1.25rem;
 }
 
+@mixin button {
+    @include pop;
+
+    background-color: $box-dark;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 2.5vmin;
+
+    &:hover {
+        box-shadow: none;//-3px -3px 4px 0px rgba(0, 0, 0, 0.10) inset, 1px 1px 4px 0px rgba(255, 255, 255, 0.10) inset;
+        // background-color: rgba(60, 60, 60, 0.70)
+    }
+
+    &:active {
+        @include indent;
+        background-color: rgba(60, 60, 60, 0.70);
+    }
+}
+
 body, #app {
+    background: linear-gradient(218deg, #AF7139 10.42%, #8F39E6 100%);
     width: 100%;
     height: 100%;
 }
@@ -101,17 +131,3 @@ main {
 
 //////////
 
-#title {
-    @include content-box;
-    h1 {
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-#details {
-    @include content-box;
-}
-#links {
-    @include content-box;
-}

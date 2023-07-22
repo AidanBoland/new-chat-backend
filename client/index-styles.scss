@@ -1,0 +1,32 @@
+@use './styles.scss';
+#title {
+    @include styles.content-box;
+    text-align: center;
+    h1 {
+        font-size: 3rem;
+        font-weight: 600;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    gap: 1.25rem;
+}
+
+#chat-link {
+    @include styles.button;
+    
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#links {
+    @include styles.content-box;
+}
+
+#details {
+    @include styles.content-box;
+}

@@ -1,4 +1,10 @@
-@include styles.scss;
+@use 'styles.scss';
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 .chat-scroll {
     width: 90%;
@@ -18,29 +24,85 @@
     }
 
     .message-box {
-        @include content-box;
+        @include styles.content-box;
 
         display: flex;
         flex-direction: row;
         gap: 1rem;
 
         .avatar {
-            @include float;
+            @include styles.float;
 
             background-color: #ffffff;
             border-radius: 1vmin;
             height: 2.5rem;
             width: 2.5rem;
         }
+
+        .message-content {
+            width: calc(100% - 6rem);
+
+            .message-bar {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-bottom: 0.25rem;
+
+                h1 {
+                    font-weight: 700;
+                }
+                
+                p {
+                    color: #999;
+                }
+            }
+        }
     }
 
     .load-button {
-        box-shadow: -4px -4px 4px 0px rgba(0, 0, 0, 0.1) inset, 2px 2px 4px 0px rgba(255, 255, 255, 0.1) inset;
-        background-color: rgba(68, 68, 68, 0.60);
-        border-radius: 2.5vmin;
+        @include styles.button;
+
         width: 20%;
-        padding: 0.5rem;
-        text-align: center;
         margin-top: 1.5rem;
+    }
+}
+
+.type-area {
+    @include styles.content-box;
+    // height: 3rem;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    box-shadow: 2px 2px 4px 0px rgba(255, 255, 255, 0.10) inset, -4px 0px 4px 0px rgba(0, 0, 0, 0.10) inset;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-bottom: 0.75rem;
+    gap: 1.25rem;
+    
+    .send-button {
+        @include styles.button;
+
+        padding: 0.5rem !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text-to-send {
+        @include styles.pop;
+        color: inherit;
+        border: none;
+        background-color: styles.$box-dark;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border-radius: 2.5vmin;
+        width: 100%;
+
+        &:focus-visible {
+            border: none;
+            outline: none;
+        }
     }
 }

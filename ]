@@ -14,9 +14,9 @@
             </div>
             <input type="hidden" id="usr-id" name="sender_id" value="7"></div>
             <div class="type-area" >
-                <input id="text-box" placeholder="Enter your message..." type="text" class="text-to-send" name="content"></input>
+                <input placeholder="Enter your message..." type="text" class="text-to-send" name="content"></input>
 
-                <button onclick="document.getElementById('text-box').reset()" type="submit" class="send-button" hx-post="/message/post" hx-trigger="click" hx-include="[name='sender_id'], [name='content']" hx-swap="none">
+                <button class="send-button" hx-post="/message/post" hx-trigger="click" hx-include="[name='sender_id'], [name='content']">
                     <i class="fa-solid fa-paper-plane" style="color: #999999;"></i>
                 </button>
             </div>
