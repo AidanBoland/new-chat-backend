@@ -84,7 +84,7 @@ async fn get_messages(data: web::Path<(i64, i32)>) -> impl Responder {
     let (client, connection) = match tokio_postgres::connect(
         "host=localhost 
         dbname=chat_app 
-        user=aidanboland",
+        user=yabeni",
         NoTls,
     )
     .await
@@ -150,7 +150,7 @@ async fn create_message(data: web::Form<models::IncomingMessage>) -> impl Respon
     let (client, connection) = match tokio_postgres::connect(
         "host=localhost 
         dbname=chat_app 
-        user=aidanboland",
+        user=yabeni",
         NoTls,
     )
     .await
@@ -176,7 +176,7 @@ async fn create_user(user: web::Json<models::IncomingUser>) -> impl Responder {
     let (client, connection) = match tokio_postgres::connect(
         "host=localhost 
         dbname=chat_app 
-        user=aidanboland",
+        user=yabeni",
         NoTls,
     )
     .await
@@ -204,7 +204,7 @@ async fn get_user(id: web::Path<i32>) -> impl Responder {
     let (client, connection) = match tokio_postgres::connect(
         "host=localhost 
         dbname=chat_app 
-        user=aidanboland",
+        user=yabeni",
         NoTls,
     )
     .await
